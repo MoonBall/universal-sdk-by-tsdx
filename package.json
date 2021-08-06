@@ -14,7 +14,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "build:node": "tsdx build --target node",
-    "build:browser": "tsdx build",
+    "build:browser": "tsdx build --format cjs,esm,umd",
     "test": "tsdx test",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
