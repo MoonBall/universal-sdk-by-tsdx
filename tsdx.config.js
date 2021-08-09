@@ -1,6 +1,9 @@
 const path = require('path');
+const alias = require('@rollup/plugin-alias');
 const replace = require('@rollup/plugin-replace');
 const commonjs = require('@rollup/plugin-commonjs');
+const builtins = require('rollup-plugin-node-builtins');
+const globals = require('rollup-plugin-node-globals');
 const nodeResolve = require('@rollup/plugin-node-resolve');
 
 function p(relativeSrcPath) {
@@ -31,14 +34,27 @@ module.exports = {
       }
 
       if (options.format === 'umd') {
+        config.plugins.unshift(
+          alias({
+            entries: [
+              {
+                find: 'safer-buffer',
+                replacement: p('browser/node-package/safer-buffer/safer.js'),
+              },
+            ],
+          })
+        );
+
         config.external = () => false;
         config.plugins = config.plugins.filter(
           it => it && it.name !== 'commonjs'
         );
         config.plugins.push(
           commonjs({
-            include: [/use-crypto/, /\/node_modules\//],
-          })
+            include: [/safer-buffer/, /use-crypto/, /\/node_modules\//],
+          }),
+          globals(),
+          builtins()
         );
       }
     }
