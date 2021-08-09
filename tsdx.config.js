@@ -41,6 +41,10 @@ module.exports = {
                 find: 'safer-buffer',
                 replacement: p('browser/node-package/safer-buffer/safer.js'),
               },
+              {
+                find: 'crypto',
+                replacement: p('polyfill/crypto/crypto.js'),
+              },
             ],
           })
         );
@@ -51,7 +55,7 @@ module.exports = {
         );
         config.plugins.push(
           commonjs({
-            include: [/safer-buffer/, /use-crypto/, /\/node_modules\//],
+            include: [/safer-buffer/, 'src/polyfill/**', /\/node_modules\//],
           }),
           globals(),
           builtins()

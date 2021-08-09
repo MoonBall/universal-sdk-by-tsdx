@@ -1,5 +1,4 @@
 import './entry';
-// @ts-ignore
 import { testSha256 } from './use-crypto';
 
 export const browserSum = (a: number, b: number) => {
