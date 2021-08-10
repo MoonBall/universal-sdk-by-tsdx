@@ -1,5 +1,5 @@
 import './entry';
-import './test-node-version';
+import './test-environment-version';
 import { testSha256 } from './use-crypto';
 
 export const sum = (a: number, b: number) => {

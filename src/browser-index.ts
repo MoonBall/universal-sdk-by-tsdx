@@ -1,4 +1,5 @@
 import './entry';
+import './test-environment-version';
 import { testSha256 } from './use-crypto';
 
 export const browserSum = (a: number, b: number) => {

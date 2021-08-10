@@ -34,6 +34,9 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "browserslist": [
+    "Chrome >= 70"
+  ],
   "name": "universal-sdk-by-tsdx",
   "author": "chengang.07@bytedance.com",
   "module": "dist/universal-sdk-by-tsdx.esm.js",
