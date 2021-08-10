@@ -21,6 +21,7 @@ module.exports = {
 
     if (options.target === 'browser') {
       config.input = p('browser-index.ts');
+
       {
         const resolverPluginIdx = config.plugins.findIndex(
           it => it.name === 'node-resolve'

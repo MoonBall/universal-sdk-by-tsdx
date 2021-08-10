@@ -4,6 +4,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
+    "browser",
     "dist",
     "src"
   ],
@@ -12,7 +13,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "node ./scripts/build.js",
     "build:node": "tsdx build --target node",
     "build:browser": "tsdx build --format cjs,esm,umd",
     "test": "tsdx test",
@@ -49,6 +50,8 @@
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.5",
     "@size-limit/preset-small-lib": "^5.0.2",
+    "execa": "^5.1.1",
+    "fs-extra": "^10.0.0",
     "husky": "^7.0.1",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-globals": "^1.4.0",

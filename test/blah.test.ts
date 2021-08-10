@@ -1,4 +1,4 @@
-import { sum } from '../src';
+import { sum } from '../dist/';
 
 describe('blah', () => {
   it('works', () => {
