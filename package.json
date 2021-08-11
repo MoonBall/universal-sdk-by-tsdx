@@ -1,8 +1,6 @@
 {
   "version": "0.1.0",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
   "files": [
     "browser",
     "dist",
@@ -47,9 +45,15 @@
       "src/**/{!(safer.js),}"
     ]
   },
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/universal-sdk-by-tsdx.esm.js",
+  "browser": {
+    "dist/index.js": "./browser/index.js",
+    "dist/universal-sdk-by-tsdx.esm.js": "./browser/universal-sdk-by-tsdx.esm.js"
+  },
   "name": "universal-sdk-by-tsdx",
   "author": "chengang.07@bytedance.com",
-  "module": "dist/universal-sdk-by-tsdx.esm.js",
   "size-limit": [
     {
       "path": "dist/universal-sdk-by-tsdx.cjs.production.min.js",
